@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+      stage ('Clean workspace') {
+        steps {
+          cleanWs()
+        }
+      }
+      stage ('Git Checkout') {
+        steps {
+            git branch: 'main',  credentialsId:'f3de8d23-ae66-427f-a339-50df0a740664',url: 'git@github.com:marimain/mvc-core7.git'
+          }
+        }
+        stage('Restore packages') {
+          steps {
+
+            bat 'dotnet build C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvc-core7\\mvc-core7.sln --configuration Release'
+          }
+        }
+
+    }
+}
