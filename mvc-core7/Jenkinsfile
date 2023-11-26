@@ -16,7 +16,7 @@ pipeline {
           steps {
 
             bat 'dotnet build C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvc-core7\\mvc-core7.sln /p:DeployOnBuild=true  /P:DeployIISAppPath=C:\\WebSites\\MVCCoreJenkins --configuration Release'
-            zip archive: true, dir: 'build', overwrite: true, zipFile: "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvc-core7\\.zip"
+            zip archive: true, dir: '', overwrite: true, zipFile: 'mvc-core7.zip'
           }
         }
 
