@@ -18,6 +18,7 @@ pipeline {
             zip archive: true, dir: '', overwrite: true, zipFile: 'mvc-core7.zip'
           }
       } //build
+      /*
     stage('Deploy Stage') {
                 steps {
                     bat label: 'MsDeploy',
@@ -27,6 +28,6 @@ pipeline {
                     '''
                 }
             }
-
+            */
     }// stages
 }
