@@ -14,7 +14,7 @@ pipeline {
       }
       stage('Restore packages') {
         steps {
-            bat 'dotnet build C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvc-core7\\mvc-core7.sln /p:DeployOnBuild=true  /P:DeployIISAppPath=C:\\WebSites\\MVCCoreJenkins --configuration Release'
+            bat 'dotnet build C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvc-core7\\mvc-core7.sln /p:DeployOnBuild=true  /p:MSDeployServiceUrl=localhost /P:DeployIISAppPath=\"MVCCoreJenkins\ --configuration Release'
             zip archive: true, dir: '', overwrite: true, zipFile: 'mvc-core7.zip'
           }
       } //build
