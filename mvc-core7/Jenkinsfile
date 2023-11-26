@@ -26,6 +26,7 @@ pipeline {
               "C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:package='C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvc-core7\\mvc-core7.zip' -dest:'C:\\WebSites\\MVCCoreJenkins',computerName=localhost
               '''
           }
+        }
 
     }// stages
 }
