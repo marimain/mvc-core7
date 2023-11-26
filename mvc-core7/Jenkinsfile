@@ -20,8 +20,11 @@ pipeline {
       } //build
     stage('Deploy Stage') {
                 steps {
-                    
-                    bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:package="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvc-core7\\mvc-core7.zip" -dest:auto -setParam:"IIS Web Application Name"="MVCCoreJenkins" -skip:objectName=filePath,absolutePath="C:\\WebSites\\MVCCoreJenkins" -enableRule:DoNotDelete -allowUntrusted=true'
+                    bat label: 'MsDeploy',
+                    script: ''' 
+                      // For Localhost
+                      "C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:package="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvc-core7\\mvc-core7.zip" -dest:auto,computerName=localhost
+                    '''
                 }
             }
 
