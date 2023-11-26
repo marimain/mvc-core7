@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Publish'){
              steps{
-               bat "dotnet publish C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvc-core7\\mvc-core7.sln "
+               bat "dotnet publish C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\mvc-core7\\mvc-core7\\mvc-core7.csproj "
              }
         }
 
